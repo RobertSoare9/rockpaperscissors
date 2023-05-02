@@ -1,37 +1,39 @@
-var array = [ "rock", "paper", "scissors"];
-let index = Math.floor(Math.random() * array.length);
-let getComputerChoice = array[index];
-console.log(getComputerChoice)
+console.log("Hi");
+const array =["rock","paper","scissors"]
 
-function playRound(playerSelection, computerSelection){
-    if (playerSelection=="rock" && computerSelection=="rock"){
+function getComputerChoice(){
+    const choice = array[Math.floor(Math.random()* array.length)];
+    return choice;
+}
+function checkWinner(playerSelection,computerSelection){
+    if (playerSelection == computerSelection){
         return "tie";
     }
-    else if (playerSelection=="rock" && computerSelection=="paper"){
-        return "you lose";
+    else if ((playerSelection == "rock" && computerSelection == "scissors")
+            || (playerSelection == "scissors" && computerSelection == "paper")  
+            || (playerSelection == "paper" && computerSelection == "rock")
+    ){
+        return "win";
     }
-    else if (playerSelection=="rock" && computerSelection=="scissors"){
-        return "you win";
-    }
-    else if (playerSelection=="paper" && computerSelection=="rock"){
-        return "you win";
-    }
-    else if (playerSelection=="paper" && computerSelection=="paper"){
-        return "you win";
-    }
-    else if (playerSelection=="paper" && computerSelection=="scissors"){
-        return "you lose";
-    }
-    else if (playerSelection=="scissors" && computerSelection=="rock"){
-        return "you lose";
-    }
-    else if (playerSelection=="scissors" && computerSelection=="paper"){
-        return "you win";
-    }
-    else if (playerSelection=="scissors" && computerSelection=="scissors"){
-        return "tie";
+    else 
+    {
+        return "lose";
     }
 }
+
+function playRound(playerSelection, computerSelection){
+ const result= checkWinner(playerSelection, computerSelection)
+ if(result == " tie"){
+    return "It's a Tie";
+ }
+ else if (result == "win"){
+    return `You win! ${playerSelection} beats ${computerSelection}`;
+ }
+ else{
+    return `You lose ${computerSelection} beats ${playerSelection}`;
+ }
+}
 const playerSelection = "rock";
-const computerSelection=getComputerChoice;
-console.log(playRound(playerSelection, computerSelection));
+
+const computerSelection=getComputerChoice();
+console.log(playRound(playerSelection,computerSelection));
