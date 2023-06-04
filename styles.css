@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    max-width: 100%;
+}
+main{
+    background-color: beige;
+}
+button{
+    background-color: green;
+    width: 8rem;
+    height: 4rem;
+}
+button:hover{
+    background-color: greenyellow;
+    width: 8.5rem;
+    height: 5rem;
+    cursor: pointer;
+    font-size: 2rem;
+}
+p{
+    width: 8rem;
+    height: 8rem;
+    border: 5px solid orange;
+    margin-top:5rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem;
+}
