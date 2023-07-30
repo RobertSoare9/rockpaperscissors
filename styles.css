@@ -25,9 +25,6 @@ button:hover img{
     width: 275px;
     height: 175px;
 }
-.result-window{
-    border: 2px solid black;
-}
 p{
     font-size: 3rem;
 }
@@ -38,10 +35,14 @@ p{
     align-items: center;
     padding: 8rem;
 }
+.result-window{
+    padding: 5rem;
+}
 .scoretab{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding:5rem;
 }
 img{
     width: 250px;

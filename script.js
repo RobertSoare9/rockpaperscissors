@@ -2,8 +2,11 @@ const rockButton= document.getElementById("rock");
 const paperButton= document.getElementById("paper");
 const scissorsButton= document.getElementById("scissors");
 const result = document.getElementById("result")
+const resetButton = document.getElementById("reset");
 let playerScore = 0;
 let computerScore = 0;
+let i = 0;
+score.innerHTML = 0 + "-" + 0;
 function rock(){
     playerSelection = rockButton.value;
 }
@@ -13,17 +16,27 @@ function paper(){
 function scissors(){
     playerSelection = scissorsButton.value;
 }
+function reset(){
+    i=0;
+    result.innerHTML = "";
+    score.innerHTML = 0 + "-" + 0;
+    playerScore = 0;
+    computerScore = 0;
+}
 rockButton.addEventListener("click",function(){
     rock();
-    playRound();
+    game();
 });
 paperButton.addEventListener("click",function(){
     paper();
-    playRound();
+    game();
 });
 scissorsButton.addEventListener("click",function(){
     scissors();
-    playRound();
+    game();
+});
+resetButton.addEventListener("click",function(){
+reset();
 });
 
 const array =["rock","paper","scissors"]
@@ -56,18 +69,7 @@ function checkWinner(playerSelection){
         computerScore++;
         return "lose";
     }
-        // else if ((playerSelection == "rock" && computerSelection == "scissors")
-    //         || (playerSelection == "scissors" && computerSelection == "paper")  
-    //         || (playerSelection == "paper" && computerSelection == "rock")
-    // ){
-    //     playerScore++;
-    //     return "win";
-    // }
-    // else 
-    // {
-    //     computerScore++;
-    //     return "lose";
-    // }
+ 
 }
 
 function playRound(){
@@ -76,10 +78,6 @@ function playRound(){
     result.innerHTML = "It's a tie";
     score.innerHTML = playerScore + "-" + computerScore;
  }
-//  else if (decision == "win"){
-//     result.innerHTML = "win";
-//     score.innerHTML = playerScore + "-" + computerScore;
-//  }
 else if (decision == "win1"){
     result.innerHTML = "You win, rock beats scissors";
     score.innerHTML = playerScore + "-" + computerScore;
@@ -93,9 +91,28 @@ else if (decision == "win3"){
     score.innerHTML = playerScore + "-" + computerScore;
 }
  else{
-    result.innerHTML = "lose";
+    result.innerHTML = "You lose!";
     score.innerHTML = playerScore + "-" + computerScore;
  }
 }
+
+function game(){
+    if (i<5){
+        playRound();
+    }
+    else{
+        if(playerScore > computerScore){
+            result.innerHTML = "Game Over, Player Wins!";
+        }
+        else if (computerScore > playerScore){
+            result.innerHTML = "Game Over, Computer Wins!";
+        }
+        else{
+            result.innerHTML = "Game Over, It's a tie";
+        }
+    }
+    i++;
+}
+
 
 
