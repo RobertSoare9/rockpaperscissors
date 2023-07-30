@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    max-width: 100%;
+}
+body,main{
+    background-color: grey;
+    min-height: 100vh;
+}
+button{
+    background-color: white;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+   
+}
+button:hover{
+    width: 18rem;
+    height: 18rem;
+    cursor: pointer;
+    font-size: 2rem;
+}
+button:hover img{
+    width: 275px;
+    height: 175px;
+}
+p{
+    width: 8rem;
+    height: 8rem;
+    font-size: 3rem;
+    margin-top:5rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem;
+}
+.scoretab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    width: 250px;
+    height: 150px;
+}
