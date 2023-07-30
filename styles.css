@@ -3,11 +3,11 @@
     max-width: 100%;
 }
 body,main{
-    background-color: grey;
+    background-color: #FBFBFF;
     min-height: 100vh;
 }
 button{
-    background-color: white;
+    background-color: #20BF55;
     width: 15rem;
     height: 15rem;
     border-radius: 50%;
@@ -18,16 +18,18 @@ button:hover{
     height: 18rem;
     cursor: pointer;
     font-size: 2rem;
+    transition: 0.25s;
+    transition-timing-function: ease-out;
 }
 button:hover img{
     width: 275px;
     height: 175px;
 }
+.result-window{
+    border: 2px solid black;
+}
 p{
-    width: 8rem;
-    height: 8rem;
     font-size: 3rem;
-    margin-top:5rem;
 }
 .container{
     display: flex;
